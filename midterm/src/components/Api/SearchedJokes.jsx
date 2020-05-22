@@ -6,9 +6,9 @@ function SearchedJokes({ arrayjokesSearched }) {
 			{arrayjokesSearched.map((item) => (
 				<div>
 					<div className='col mb-2'>
-						<div className='card bg-info'>
+						<div className='card back-blue-p'>
 							<div className='row no-gutters' bg-info>
-								<div className='card-body bg-info'>
+								<div className='card-body'>
 									<img src={item.icon_url} alt=""/>
 									<h4 className='card-title  body_width'>{item.value}</h4>
 								</div>

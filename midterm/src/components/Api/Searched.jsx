@@ -36,6 +36,7 @@ function Searched({ see, onClickSeeMore, onClickGoBack }) {
 			alert.show(<div style={{ color: "red" }}>Try to search first!</div>);
 		}
 	};
+	
 	if (!arrayjokes) return null;
 	return (
 		<div className='container'>
@@ -61,7 +62,7 @@ function Searched({ see, onClickSeeMore, onClickGoBack }) {
 				{arrayjokes.total > 0 && (
 					<div>
 						{!see && (
-							<div className='flex-column  form_search text-white p-3 back-Dark body_width md-4 flex-column'>
+							<div className='flex-column form_search text-white p-3 back-Dark body_width md-4 flex-column'>
 								<h1> total - {arrayjokes.total}</h1>
 								<p>{joke}</p>
 								<button onClick={onClickSeeMore} className='btn btn-warning'>
