@@ -18,8 +18,10 @@ function RandomJoke(props) {
 	if (!list) return null;
 	return (
 		<div className='container'>
-			<div className='flex-column bg-Red text-blue p-3 body_width md-4 flex-column'>
-				<h2>{list.value}</h2>
+			<div className='flex-column form_search text-white p-3 back-Red body_width md-4 flex-column'>
+				<h5>Random Joke :))))</h5>
+				<img src={list.icon_url} alt=""/>
+				<h3>{list.value}</h3>
 			</div>
 		</div>
 	);

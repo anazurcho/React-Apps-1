@@ -1,17 +1,19 @@
 import React, { useRef, useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../context/authContext";
+import { useAlert,types } from "react-alert";
 
 function Login(props) {
 	const { errors, handleSubmit, register } = useForm();
 	const { login } = useContext(AuthContext);
-
+	const alert = useAlert();
+	
 	const onSubmit = (data) => {
 		console.log(data);
 		if (data["login"] === "admin" && data["password"] === "admin") {
 			login();
 		} else {
-			alert("try again to login");
+			alert.show(<div style={{ color: "white" }}>try again to login</div>, {type: types.INFO, });
 		}
 	};
 
@@ -21,8 +23,8 @@ function Login(props) {
 			<form onSubmit={handleSubmit(onSubmit)} ref={formRef}>
 				<h2>if you want to see jokes login!</h2>
 				<div className='form-group'>
-					<label htmlFor='exampleInputEmail1'>login</label>
 					<input
+						placeholder='login'
 						type='text'
 						className='form-control'
 						id='exampleInputEmail1'
@@ -48,8 +50,8 @@ function Login(props) {
 					)}
 				</div>
 				<div className='form-group'>
-					<label htmlFor='exampleInputPassword1'>Password</label>
 					<input
+						placeholder='password'
 						type='password'
 						className='form-control'
 						name='password'
@@ -69,7 +71,7 @@ function Login(props) {
 						Check me out
 					</label>
 				</div>
-				<button type='submit' className='btn btn-primary'>
+				<button type='submit' className='btn back-blue-p'>
 					Submit
 				</button>
 			</form>

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Category from "./Category";
+import { useAlert,types } from "react-alert";
 
 function Categories({categories}) {
 	const [loading, setLoading] = useState(true);
-
+	const alert = useAlert();
 	const handleItemClick = (itemId) => {
-		alert("can't touch this until login");
+		alert.show(<div style={{ color: "white" }}>If u want to see chucks' jokes login!</div>, {type: types.INFO, });
 	};
 
 	useEffect(() => {
@@ -35,12 +36,11 @@ function Categories({categories}) {
 
 	return (
 		<div className='row flex-column'>
-			<div className='App'>Total - {categories.length}</div>
 			<div
 				className={`row p-5 ${
 					loading
 						? "justify-content-center"
-						: " bg-success row row-cols-1 row-cols-md-4"
+						: "row row-cols-1 row-cols-md-4"
 				}`}>
 				{content}
 			</div>

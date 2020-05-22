@@ -7,11 +7,11 @@ function HomeDashboard({categories}) {
   return (
     <div>
       <RandomJoke />
-      <div className="row">
-        <div className="col-8">
+      <div className="row row-cols-1 ">
+        <div className="col-9">
             <Categories  categories={categories}/>
         </div>
-        <div className="col-4">
+        <div className="col-3">
             <Form />
         </div>
       </div>

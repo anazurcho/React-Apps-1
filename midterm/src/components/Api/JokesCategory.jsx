@@ -3,8 +3,6 @@ import JokesService from "../getApi/JokesService";
 
 function JokesCategory({ categoryid, handleOnGetBack }) {
 	const [btn, setBtn] = useState(null);
-	console.log(categoryid);
-
 	const getJokeCategories = new JokesService();
 
 	const getApiUrl = () => {
@@ -25,17 +23,24 @@ function JokesCategory({ categoryid, handleOnGetBack }) {
 
 	if (!btn) return null;
 	return (
-		<div className='flex-column p-3 container body_width md-4 flex-column'>
+		<div className='flex-column p-3 container back-blue-p body_width md-4 flex-column'>
 			<div className='container'>
-				<div className='flex-column bg-Red text-blue p-3 body_width body_width md-4 flex-column'>
+				<div className='flex-column bg-Red text-blue p-3 body_width md-4 flex-column'>
+					<img src={btn.icon_url} alt='' />
 					<h2>{btn.value}</h2>
+					<div className='row'>
+						<div className='col-5'>
+							<button onClick={handleOnGetBack} className='btn back-Dark-p'>
+								go back to the categories
+							</button>
+						</div>
+						<div className='col-7'>
+							<button onClick={handleGetAnother} className='btn back-Red-p'>
+								get another joke with the same category
+							</button>
+						</div>
+					</div>
 				</div>
-				<button onClick={handleOnGetBack} className='btn btn-warning'>
-					go back
-				</button>
-				<button onClick={handleGetAnother} className='btn btn-danger'>
-					get another joke with same category
-				</button>
 			</div>
 		</div>
 	);

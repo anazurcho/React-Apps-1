@@ -43,13 +43,13 @@ function FilteredCategories({ categories }) {
 	return (
 		<div>
 			{!selectedItemId && (
-				<div className='row flex-column bg-success'>
+				<div className='row flex-column'>
 					<div className='App'>Total - {categories.length}</div>
 					<div
 						className={`row p-5 ${
 							loading
 								? "justify-content-center"
-								: "bg-success row row-cols-1 row-cols-md-4"
+								: "row row-cols-1 row-cols-md-4"
 						}`}>
 						{content}
 					</div>
